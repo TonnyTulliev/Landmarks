@@ -87,15 +87,15 @@ final class MapViewController : UIViewController, MKMapViewDelegate{
         addConstraint()
         addDelegate()
         navigationItem.backButtonTitle = "Landmarks"
-       
-        
-        
+   
     }
+    
     //MARK:- Metods
     private func configure(){
         view.backgroundColor = #colorLiteral(red: 0.9752815366, green: 0.9694834352, blue: 0.9797381759, alpha: 1)
         navigationController?.isNavigationBarHidden = false
     }
+    
     private func addUI(){
         view.addSubview(mapView)
         view.addSubview(baseView)
@@ -105,8 +105,8 @@ final class MapViewController : UIViewController, MKMapViewDelegate{
         view.addSubview(parkLabel)
         view.addSubview(stateLabel)
         view.addSubview(star)
-        
     }
+    
     private func addConstraint() {
         mapView.snp.makeConstraints { (mapView) in
             mapView.bottom.equalTo(view.snp.centerY)

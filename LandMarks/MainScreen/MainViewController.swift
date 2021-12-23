@@ -55,12 +55,10 @@ class MainViewController : UIViewController {
     //MARK:- Metods
     private func configure(){
         view.backgroundColor = .white
-        
     }
     
     private func addToView(){
         view.addSubview(tableView)
-        
     }
     
     private func addConstraints() {

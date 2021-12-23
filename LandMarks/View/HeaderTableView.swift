@@ -11,7 +11,7 @@ import SnapKit
 
 class HeaderTableView: UITableViewHeaderFooterView {
     
-   
+    //MARK:- UI
     var label : UILabel = {
         var label = UILabel()
         label.text = "Landmarks"
@@ -46,7 +46,7 @@ class HeaderTableView: UITableViewHeaderFooterView {
         switcher.isHidden = true
         return switcher
     }()
-    
+    //MARK:- init
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         self.addSubview(label)

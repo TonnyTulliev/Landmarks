@@ -11,6 +11,7 @@ import SnapKit
 
 class PlaceTableViewCell: UITableViewCell {
     
+    //MARK:- UI
     var image: UIImageView = {
         var image = UIImageView()
         image.image = UIImage(named: "")
@@ -54,6 +55,7 @@ class PlaceTableViewCell: UITableViewCell {
         }
     }
     
+    //MARK:- Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(image)
