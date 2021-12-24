@@ -136,7 +136,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as! PlaceTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as? PlaceTableViewCell else {return UITableViewCell()}
         
         switch favoriteState {
         case true: cell.setup(data: sortedLandmarksArray, indexPath: indexPath)
@@ -146,8 +146,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderTableView") as! HeaderTableView
-        headerCell.backgroundColor = .white
+        guard let headerCell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderTableView") as? HeaderTableView else {return UIView()}
         headerCell.addSubview(switcher)
         switcher.snp.makeConstraints { (make) in
             make.bottom.equalTo(headerCell.snp.top).offset(90)
